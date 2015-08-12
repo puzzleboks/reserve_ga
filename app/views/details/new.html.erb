@@ -1,6 +1,6 @@
 <h1>Give us some details</h1>
 
-<%= form_for @reservation, url: {action: "new"} do |f| %>
+<%= form_for @reservation, url: {action: "confirm"}, method: :get do |f| %>
 
   <%= f.label :datetime %>
   <%= datetime_field(:reservation, :reservation_date) %>

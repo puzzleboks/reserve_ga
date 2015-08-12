@@ -10,6 +10,11 @@ class DetailsController < ApplicationController
     @num_adapters = @reservation.num_adapters
     @num_whiteboards = @reservation.num_whiteboards
     @has_alcohol = @reservation.has_alcohol
+
+  end
+
+  def confirm
+    fail params.inspect
   end
 
 end
