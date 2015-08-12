@@ -1,6 +1,9 @@
 class ConfirmController < ApplicationController
 
-  def new
+  def show
+  end
+
+  def create
   end
 
 end
