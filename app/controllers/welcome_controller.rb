@@ -5,10 +5,11 @@ class WelcomeController < ApplicationController
   end
 
   def new
-    render 'details/new'
+    redirect_to '/details'
   end
 
   def create
+    redirect_to '/details'
   end
 
 
