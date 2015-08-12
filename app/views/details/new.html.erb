@@ -1,1 +1,19 @@
-hello new page
+<h1>Give us some details</h1>
+
+<%= form_for @reservation do |f| %>
+
+  <%= f.label :datetime %>
+  <%= f.text_field :datetime %>
+  <!-- ^this line should be something other than a text field -->
+
+  <%= f.label :num_guests %>
+  <%= f.text_field :num_guests %>
+  <!-- ^this line should be a sliding scale -->
+
+  <%= f.label :num_tables %>
+  <%= f.text_field :num_tables %>
+
+
+
+
+  <% end %>

@@ -2,7 +2,7 @@ class DetailsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @room = Room.find(params[:room_id])
+    @room = @reservation.room
     @reservation_date = @reservation.reservation_date
     @num_guests = @reservation.num_guests
     @num_tables = @reservation.num_tables

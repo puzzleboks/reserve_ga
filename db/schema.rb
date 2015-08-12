@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150810192058) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.integer  "user_id_id"
-    t.integer  "room_id_id"
+    t.integer  "user_id"
+    t.integer  "room_id"
     t.datetime "reservation_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20150810192058) do
     t.integer  "num_whiteboards"
     t.boolean  "has_alcohol"
   end
+
+  add_index "reservations", ["room_id"], name: "index_reservations_on_room_id", using: :btree
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
   create_table "rooms", force: :cascade do |t|
     t.boolean "has_projector"

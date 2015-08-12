@@ -1,8 +1,8 @@
 class CreateReservations < ActiveRecord::Migration
   def change
     create_table :reservations do |t|
-      t.references :user_id
-      t.references :room_id
+      t.references :user, index: true
+      t.references :room, index: true
       t.datetime :reservation_date
       t.timestamps null: false
       t.integer :num_guests
