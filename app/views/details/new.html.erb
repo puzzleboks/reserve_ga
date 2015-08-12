@@ -1,9 +1,9 @@
 <h1>Give us some details</h1>
 
-<%= form_for @reservation do |f| %>
+<%= form_for @reservation, url: {action: "new"} do |f| %>
 
   <%= f.label :datetime %>
-  <%= f.text_field :datetime %>
+  <%= datetime_field(:reservation, :reservation_date) %>
   <!-- ^this line should be something other than a text field -->
 
   <%= f.label :num_guests %>
@@ -13,7 +13,18 @@
   <%= f.label :num_tables %>
   <%= f.text_field :num_tables %>
 
+  <%= f.label :num_chairs %>
+  <%= f.text_field :num_chairs %>
 
+  <%= f.label :num_adapters %>
+  <%= f.text_field :num_adapters %>
+
+  <%= f.label :num_whiteboards %>
+  <%= f.text_field :num_whiteboards %>
+
+  <%= select(:reservation, :has_alcohol, [['Yes, I agree to not serve alcohol to guests under 21 years of age.', true], ['No, we will not be serving alcohol.', false]]) %>
+
+  <%= f.submit "Next" %>
 
 
   <% end %>

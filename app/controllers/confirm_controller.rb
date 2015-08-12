@@ -2,12 +2,13 @@ class ConfirmController < ApplicationController
 
   def create
     @reservation = Reservation.create!(reservation_params)
+    redirect_to confirm_path
 
   end
 
   def show
     @reservation = Reservation.find(params[:reservation_id])
-    @room = @reservation.room.find(params[:room_id])
+    @room = @reservation.room
   end
 
   private
