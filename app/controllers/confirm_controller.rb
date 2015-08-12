@@ -3,7 +3,6 @@ class ConfirmController < ApplicationController
   def create
     @reservation = Reservation.create!(reservation_params)
     redirect_to confirm_path
-
   end
 
   def show
