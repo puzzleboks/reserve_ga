@@ -8,13 +8,16 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<%= image_tag "ga_menu.png", alt: "menu", width: "1450" %>
 <%= yield %>
 <script>
-  function outputUpdate(vol) {
-    document.querySelector('#guests').value = vol;
-    document.querySelector('#tables').value = vol;
-  }
+  $(document).ready(function(){
+    $("input[type=range]").on("input", function(){
+      var output = $(this).prev("output"),
+          value = $(this).val();
+      output.text(value);
+    })
+  })
 </script>
 </body>
 </html>

@@ -13,32 +13,48 @@
         <div class="box details-flex-2">
           <%= f.label :number_of_guests %>
           <output for=fader id=guests>50</output>
-          <%= f.range_field :num_guests, :in => 0..100, :step => 1, oninput: "outputUpdate(value)" %>
+          <%= f.range_field :num_guests, :in => 0..100, :step => 1, list: "volumeslider" %>
+          <datalist id=richterscale>
+            <option>0</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+            <option>60</option>
+            <option>70</option>
+            <option>80</option>
+            <option>90</option>
+            <option>100</option>
+          </datalist>
           <%#= f.label :number_of_guests %>
           <%#= f.range_field :num_guests %>
         </div>
         <div class="box details-flex-3">
           <%= f.label :number_of_tables %>
-          <output for=fader id=tables>50</output>
-          <%= f.range_field :num_tables, :in => 0..20, :step => 1, oninput: "outputUpdate(value)"   %>
+          <output for=fader id=tables>10</output>
+          <%= f.range_field :num_tables, :in => 0..20, :step => 1, list: "volumeslider" %>
           <%#= f.label :number_of_tables %>
           <%#= f.text_field :num_tables %>
         </div>
         <div class="box details-flex-4">
           <%= f.label :number_of_chairs %>
-          <%= f.range_field :num_chairs, :in => 0..50, :step => 1 %>
+          <output for=fader id=tables>25</output>
+          <%= f.range_field :num_chairs, :in => 0..50, :step => 1, list: "volumeslider" %>
           <%#= f.label :number_of_chairs %>
           <%#= f.text_field :num_chairs %>
         </div>
         <div class="box details-flex-5">
           <%= f.label :number_of_adapters %>
-          <%= f.range_field :num_adapters, :in => 0..5, :step => 1 %>
+          <output for=fader id=tables>3</output>
+          <%= f.range_field :num_adapters, :in => 0..5, :step => 1, list: "volumeslider" %>
           <%#= f.label :number_of_adapters %>
           <%#= f.text_field :num_adapters %>
         </div>
         <div class="box details-flex-6">
           <%= f.label :number_of_whiteboards %>
-          <%= f.range_field :num_whiteboards, :in => 0..3, :step => 1 %>
+          <output for=fader id=tables>1</output>
+          <%= f.range_field :num_whiteboards, :in => 0..3, :step => 1, list: "volumeslider" %>
           <%#= f.label :number_of_whiteboards %>
           <%#= f.text_field :num_whiteboards %>
         </div>
@@ -62,3 +78,20 @@
     <% end %>
   </footer>
 </article>
+<script>
+function ticks(element) {
+  if (element.hasOwnProperty('list') && element.hasOwnProperty('min') && element.hasOwnProperty('max') && element.hasOwnProperty('step')) {
+    var datalist = document.createElement('datalist'),
+    minimum = parseInt(element.getAttribute('min')),
+    step = parseInt(element.getAttribute('step')),
+    maximum = parseInt(element.getAttribute('max'));
+    datalist.id = element.getAttribute('list');
+    for (var i = minimum; i < maximum+step; i = i + step) {
+      datalist.innerHTML +="<option value="+i+"></option>";
+    }
+    element.parentNode.insertBefore(datalist, element.nextSibling);
+  } }
+  var lists = document.querySelectorAll("input[type=range][list]"),
+  arr = Array.prototype.slice.call(lists);
+  arr.forEach(ticks);
+  </script>
