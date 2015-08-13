@@ -10,6 +10,11 @@
 <body>
 
 <%= yield %>
-
+<script>
+  function outputUpdate(vol) {
+    document.querySelector('#guests').value = vol;
+    document.querySelector('#tables').value = vol;
+  }
+</script>
 </body>
 </html>
