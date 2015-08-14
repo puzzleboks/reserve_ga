@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  root 'welcome#index'
+  
   get '/welcome', to: 'welcome#index'
   post '/welcome', to: 'welcome#new'
   get '/details', to: 'reservations#new'
