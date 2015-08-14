@@ -1,33 +1,97 @@
-<h1>Give us some details</h1>
-
-<%= form_for @reservation, url: {action: "confirm"}, method: :get do |f| %>
-
-  <%= f.label :datetime %>
-  <%= datetime_field(:reservation, :reservation_date) %>
-  <!-- ^this line should be something other than a text field -->
-
-  <%= f.label :num_guests %>
-  <%= f.text_field :num_guests %>
-  <!-- ^this line should be a sliding scale -->
-
-  <%= f.label :num_tables %>
-  <%= f.text_field :num_tables %>
-
-  <%= f.label :num_chairs %>
-  <%= f.text_field :num_chairs %>
-
-  <%= f.label :num_adapters %>
-  <%= f.text_field :num_adapters %>
-
-  <%= f.label :num_whiteboards %>
-  <%= f.text_field :num_whiteboards %>
-
-  <%= select(:reservation, :has_alcohol, [['Yes, I agree to not serve alcohol to guests under 21 years of age.', true], ['No, we will not be serving alcohol.', false]]) %>
-
-  <%= f.submit "Next" %>
-
-  <br/>
-  <br/>
-  <%= image_tag "GA_Map.png", alt: "Photo of GA" %>
-
-  <% end %>
+<article>
+  <header>
+    <h1>Give Us Some Details</h1>
+  </header>
+  <section class="flex-container">
+    <div class="box flex-1">
+      <%= form_for @reservation, url: {action: "confirm"}, method: :get do |f| %>
+      <div class="details-flex-container">
+        <div class="box details-flex-1">
+          <%= f.label :date_and_time %>
+          <%= datetime_local_field(:reservation_time, :reservation_date) %>
+        </div>
+        <div class="box details-flex-2">
+          <%= f.label :number_of_guests %>
+          <output for=fader id=guests>50</output>
+          <%= f.range_field :num_guests, :in => 0..100, :step => 1, list: "volumeslider" %>
+          <datalist id=richterscale>
+            <option>0</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+            <option>60</option>
+            <option>70</option>
+            <option>80</option>
+            <option>90</option>
+            <option>100</option>
+          </datalist>
+          <%#= f.label :number_of_guests %>
+          <%#= f.range_field :num_guests %>
+        </div>
+        <div class="box details-flex-3">
+          <%= f.label :number_of_tables %>
+          <output for=fader id=tables>10</output>
+          <%= f.range_field :num_tables, :in => 0..20, :step => 1, list: "volumeslider" %>
+          <%#= f.label :number_of_tables %>
+          <%#= f.text_field :num_tables %>
+        </div>
+        <div class="box details-flex-4">
+          <%= f.label :number_of_chairs %>
+          <output for=fader id=tables>25</output>
+          <%= f.range_field :num_chairs, :in => 0..50, :step => 1, list: "volumeslider" %>
+          <%#= f.label :number_of_chairs %>
+          <%#= f.text_field :num_chairs %>
+        </div>
+        <div class="box details-flex-5">
+          <%= f.label :number_of_adapters %>
+          <output for=fader id=tables>3</output>
+          <%= f.range_field :num_adapters, :in => 0..5, :step => 1, list: "volumeslider" %>
+          <%#= f.label :number_of_adapters %>
+          <%#= f.text_field :num_adapters %>
+        </div>
+        <div class="box details-flex-6">
+          <%= f.label :number_of_whiteboards %>
+          <output for=fader id=tables>1</output>
+          <%= f.range_field :num_whiteboards, :in => 0..3, :step => 1, list: "volumeslider" %>
+          <%#= f.label :number_of_whiteboards %>
+          <%#= f.text_field :num_whiteboards %>
+        </div>
+        <div class="box details-flex-7">
+          <%= select(:reservation, :has_alcohol, [['Yes, I agree to not serve alcohol to guests under 21 years of age.', true], ['No, we will not be serving alcohol.', false]]) %>
+        </div>
+        <div class="box details-flex-8">
+          <%= f.submit "Reserve" %>
+        </div>
+      </div>
+    </div>
+    <div class="box flex-2">
+      <h2>List of Rooms:</h2>
+      <h3>Room 1</h3>
+      <h3>Room 2</h3>
+      <h3>Room 3</h3>
+    </div>
+  </section>
+  <footer>
+    <%= image_tag "GA_Map.png", alt: "Photo of GA", width: "960" %>
+    <% end %>
+  </footer>
+</article>
+<script>
+function ticks(element) {
+  if (element.hasOwnProperty('list') && element.hasOwnProperty('min') && element.hasOwnProperty('max') && element.hasOwnProperty('step')) {
+    var datalist = document.createElement('datalist'),
+    minimum = parseInt(element.getAttribute('min')),
+    step = parseInt(element.getAttribute('step')),
+    maximum = parseInt(element.getAttribute('max'));
+    datalist.id = element.getAttribute('list');
+    for (var i = minimum; i < maximum+step; i = i + step) {
+      datalist.innerHTML +="<option value="+i+"></option>";
+    }
+    element.parentNode.insertBefore(datalist, element.nextSibling);
+  } }
+  var lists = document.querySelectorAll("input[type=range][list]"),
+  arr = Array.prototype.slice.call(lists);
+  arr.forEach(ticks);
+  </script>
