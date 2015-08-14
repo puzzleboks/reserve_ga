@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/welcome', to: 'welcome#show'
-  post '/welcome', to: 'welcome#create'
-  get '/details', to: 'details#new'
-  get '/confirm', to: 'details#confirm'
-  post '/confirm', to: 'confirm#create'
-  get '/done', to: 'done#show'
+  get '/welcome', to: 'welcome#index'
+  post '/welcome', to: 'welcome#new'
+  get '/details', to: 'reservations#new'
+  get '/confirm', to: 'reservations#confirm'
+  post '/confirm', to: 'reservations#create'
+  get '/done', to: 'reservations#show'
+
 
 
   # resources :reservations do
