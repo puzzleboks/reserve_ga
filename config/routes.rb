@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
   resources :reservations
   get '/welcome', to: 'welcome#index'
   post '/welcome', to: 'welcome#new'
