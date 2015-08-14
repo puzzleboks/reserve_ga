@@ -1,19 +1,19 @@
-* move everything from details controller to reservations controller
-* delete details controller
+* move everything from details controller to reservations controller DONE
+* delete details controller DONE
 *reservations controller
   new action + view
   confirm action + view
   create action
   show action + view
 
-* move everything from done controller to reservations#show
-* delete done controller
+* move everything from done controller to reservations#show DONE
+* delete done controller DONE
 
 * move everything from welcome controller to reservations controller
 * delete welcome controller
 
-* move everything from confirm controller to reservations controller
-* delete confirm controller
+* move everything from confirm controller to reservations controller DONE
+* delete confirm controller DONE
 
 *new member route for 'confirm'
 
