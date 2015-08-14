@@ -5,6 +5,7 @@
 article {
   font-family: "Arial", sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
+  /*font-family: PFDinTextCompProBold; >>> general assembly's font */
   font-size: 24px;
   width: 960px;
   margin: 0 auto;
@@ -29,7 +30,6 @@ article {
   -webkit-box-direction: normal;
   flex-direction: row;
 }
-
 
 .box {
 	box-sizing: border-box;
@@ -59,8 +59,25 @@ article {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: column;
-  /*justify-content: flex-start;*/
+  justify-content: flex-start;
   /*text-align: center;*/
+}
+
+.rooms-flex-1, .rooms-flex-2, .rooms-flex-3,
+.rooms-flex-4, .rooms-flex-5, .rooms-flex-6,
+.rooms-13, .rooms-16 {
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
 }
 
 h1 {
@@ -107,6 +124,7 @@ input[type="submit"] {
 .welcome {
   text-align: center;
 }
+<<<<<<< HEAD
 
 .get_started_btn {
 
@@ -125,3 +143,5 @@ input[type="submit"] {
 }
 
 
+=======
+>>>>>>> 919a2ecdb57f1151ff5d766a662f2db95050edba

@@ -4,72 +4,125 @@
   </header>
   <section class="flex-container">
     <div class="box flex-1">
-      <%= form_for @reservation, url: {action: "confirm"}, method: :get do |f| %>
+      <%= form_for @reservation, url: {action: "create"}, method: :post do |f| %>
       <div class="details-flex-container">
         <div class="box details-flex-1">
           <%= f.label :date_and_time %>
-          <%= datetime_local_field(:reservation_time, :reservation_date) %>
+          <%= datetime_local_field(:reservation_date, :reservation_time) %>
         </div>
         <div class="box details-flex-2">
           <%= f.label :number_of_guests %>
-          <output for=fader id=guests>50</output>
-          <%= f.range_field :num_guests, :in => 0..100, :step => 1, list: "volumeslider" %>
+          <output for=fader id=guests>0</output>
+          <%= f.range_field :num_guests, :in => 0..70, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-3">
           <%= f.label :number_of_tables %>
-          <output for=fader id=tables>10</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_tables, :in => 0..20, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-4">
           <%= f.label :number_of_chairs %>
-          <output for=fader id=tables>25</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_chairs, :in => 0..50, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-5">
           <%= f.label :number_of_adapters %>
-          <output for=fader id=tables>3</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_adapters, :in => 0..5, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-6">
           <%= f.label :number_of_whiteboards %>
-          <output for=fader id=tables>1</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_whiteboards, :in => 0..3, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-7">
-          <%= select(:reservation, :has_alcohol, [['Yes, I agree to not serve alcohol to guests under 21 years of age.', true], ['No, we will not be serving alcohol.', false]]) %>
+          <%= select(:reservation, :has_alcohol, [['No, we will not be serving alcohol.', false], ['Yes, I agree to only provide alcohol to guests over 21 years of age.', true]]) %>
         </div>
         <div class="box details-flex-8">
           <%= f.submit "Reserve" %>
         </div>
       </div>
     </div>
-    <div class="box flex-2">
+    <div cass=" flex-2">
       <h2>List of Rooms:</h2>
-      <div class="box rooms-flex-1">
-        <h3>Room 1</h3>
+      <div class="rooms-flex-1">
+        <div class= flex-pict-1">
+          <%= image_tag "classrm_1.png", alt: "Photo of room 1" %>
+        </div>
+        <div class= flex-list-1">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-      <div class="box rooms-flex-2">
-        <h3>Room 2</h3>
+      <div class="rooms-flex-2">
+        <div class= flex-pict-2">
+          <%= image_tag "classrm_2.png", alt: "Photo of room 2" %>
+        </div>
+        <div class= flex-list-2">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-      <div class="box rooms-flex-3">
-        <h3>Room 3</h3>
+      <div class="rooms-flex-3">
+        <div class= flex-pict-3">
+          <%= image_tag "classrm_3.png", alt: "Photo of room 3" %>
+        </div>
+        <div class= flex-list-3">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-      <div class="box rooms-flex-4">
-        <h3>Room 4</h3>
+      <div class="rooms-flex-4">
+        <div class= flex-pict-4">
+          <%= image_tag "classrm_4.png", alt: "Photo of room 4" %>
+        </div>
+        <div class= flex-list-4">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-      <div class="box rooms-flex-5">
-        <h3>Room 5</h3>
+      <div class="rooms-flex-5">
+        <div class= flex-pict-5">
+          <%= image_tag "classrm_5.png", alt: "Photo of room 5" %>
+        </div>
+        <div class= flex-list-5">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-      <div class="box rooms-flex-6">
-        <h3>Room 6</h3>
-        <ul>
-          <li>50 guests</li>
-          <li>10 tables</li>
-          <li>3 adapters</li>
-          <li>1 whiteboard</li>
-        </ul>
+      <div class="rooms-flex-6">
+        <div class= flex-pict-6">
+          <%= image_tag "classrm_6.png", alt: "Photo of room 6" %>
+        </div>
+        <div class= flex-list-6">
+          <ul>
+            <li>50 guests</li>
+            <li>10 tables</li>
+            <li>3 adapters</li>
+            <li>1 whiteboard</li>
+          </ul>
+        </div>
       </div>
-
     </div>
   </section>
   <footer>
