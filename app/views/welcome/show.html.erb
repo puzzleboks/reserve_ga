@@ -1,19 +1,36 @@
-<h1>Welcome to Reserve GA</h1>
+<article>
+  <header>
+    <h1 class="welcome">Welcome to Reserve GA!</h1>
+  </header>
+  <section class="flex-welcome">
+    <p>
+      General Assembly houses a bunch of versatile spaces to hold meetings, study groups, or anything else you might need! Use Reserve GA to check availability and book a room based on your needs.
+    </p>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+    <h5>The Rules</h5>
+    <ol>
+      <li>Show up on time, leave on time.
+        <p>
+          Keep an eye on the clock. Please wrap up in a timely manner so that the folks after you can use the space. You can book up to three hours at a time. If you need more than that, please book a consecutive time slot. If your time is running out and there is no one booked for the next spot, feel free to stick around! Please reserve enough time to set up and clean up up after yourself.
+        </p>
+      </li>
+      <li>Be mindful of what’s going on around you.
+        <p>
+          GA offers classes during the day and in the evenings. Please be aware of your volume level to prevent disturbing classes and meetings that are in session.
+        </p>
+      </li>
+      <li>Clean up after yourself.
+        <p>
+          GA Staff is available to help you set up and break down your meeting space. Please help us keep things running smoothly by cleaning up after yourself so that we can prepare the room for the next activity.
+        </p>
+      </li>
+    </ol>
 
-<h3>The Rules</h3>
-
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
-<%= form_tag do %>
-<%= check_box_tag(:agree) %>
-<%= label_tag(:agree, "I agree to the rules") %>
-
-<%= submit_tag("Get Started") %>
-
-<% end %>
+    <%= form_tag do %>
+      <%= check_box_tag(:agree) %>
+      <%= label_tag(:agree, "I agree to the rules") %>
+      <p class="get_started_btn">
+        <%= submit_tag("Get Started") %>
+      </p>
+    <% end %>
+</article>

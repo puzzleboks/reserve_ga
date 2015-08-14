@@ -5,6 +5,7 @@
 article {
   font-family: "Arial", sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
+  font-size: 24px;
   width: 960px;
   margin: 0 auto;
   padding-top: 2%;
@@ -16,8 +17,6 @@ article {
 }
 
 .flex-container {
-  /*margin: 1em 0;*/
-  /*border: 1px solid #FFF;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,15 +27,13 @@ article {
   -o-flex-direction: row;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
 }
 
+
 .box {
-	/*border-radius: .3em;*/
 	box-sizing: border-box;
-	/*border: 4px solid #999;*/
 	padding: 20px 0;
-	/*background: #E6E3D4;*/
 }
 
 .flex-1 {
@@ -51,7 +48,19 @@ article {
   -webkit-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  /*justify-content: flex-start;*/
+  /*text-align: center;*/
 }
 
 h1 {
@@ -60,13 +69,18 @@ h1 {
   font-size: 48px;
 }
 
+h3, h5 {
+  margin: 0;
+}
+ol {
+  font-size: 18px;
+}
+
 input[type="range"] {
   width: 512px;
-  /*color: grey;*/
 }
 
 input[type="datetime-local"] {
-  /*width: 300px;*/
   color: grey;
 }
 
@@ -88,4 +102,12 @@ input[type="submit"] {
   color: #fff;
   background-color: #fa4542;
   box-shadow: 0 3px 0 0 #be0201;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.get_started_btn {
+
 }
