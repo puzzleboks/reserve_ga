@@ -12,23 +12,24 @@ class ReservationsController < ApplicationController
     @has_alcohol = @reservation.has_alcohol
   end
 
-
-  def confirm
-  end
-
   def create
     @reservation = Reservation.create!(reservation_params)
-    redirect_to '/done'
+    redirect_to @reservation
   end
 
+  def confirm
+    @reservation = Reservation.find(params[:id])
+  end
+
+
   def show
-    @reservation = Reservation.find(params[:reservation_id])
+    @reservation = Reservation.find(params[:id])
     @room = @reservation.room
   end
 
   private
   def reservation_params
-    params.require(:reservation).permit(:reservation_date)
+    params.require(:reservation).permit(:reservation_date, :num_guests, :num_tables, :num_chairs, :num_adapters, :num_whiteboards, :has_alcohol)
   end
 
 
