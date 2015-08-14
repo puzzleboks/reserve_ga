@@ -30,7 +30,6 @@ article {
   flex-direction: row;
 }
 
-
 .box {
 	box-sizing: border-box;
 	padding: 20px 0;
@@ -59,8 +58,25 @@ article {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: column;
-  /*justify-content: flex-start;*/
+  justify-content: flex-start;
   /*text-align: center;*/
+}
+
+.rooms-flex-1, .rooms-flex-2, .rooms-flex-3,
+.rooms-flex-4, .rooms-flex-5, .rooms-flex-6,
+.rooms-13, .rooms-16 {
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
 }
 
 h1 {
@@ -106,8 +122,4 @@ input[type="submit"] {
 
 .welcome {
   text-align: center;
-}
-
-.get_started_btn {
-
 }
