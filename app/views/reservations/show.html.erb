@@ -1,2 +1,7 @@
 <h1>Your reservation is confirmed!</h1>
 <h2>Thanks for using Reserve GA</h2>
+<h3> Confirmation Number: <%= @reservation.id %> </h3>
+
+<%= @reservation.reservation_date %>
+Room: <%= @reservation.room %>
+<%= @reservation.num_guests %>

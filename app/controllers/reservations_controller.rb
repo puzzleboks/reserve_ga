@@ -2,7 +2,6 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @room = @reservation.room
     @reservation_date = @reservation.reservation_date
     @num_guests = @reservation.num_guests
     @num_tables = @reservation.num_tables
@@ -14,6 +13,13 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.create!(reservation_params)
+    # if (@num_guests <= 50)
+    #   @reservation.room = classroom1
+    # elsif 50 < @num_guests <= 60
+    #   @reservation.room = classroom4
+    # elsif 60 < @num_guests <= 70
+    #   @reservation.room = classroom2
+    # end
     redirect_to @reservation
   end
 
