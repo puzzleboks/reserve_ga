@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-classroom1 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
-classroom2 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
-classroom3 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
-classroom4 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
-classroom5 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
-classroom6 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"???")
+classroom1 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"50")
+classroom2 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"70")
+classroom3 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"50")
+classroom4 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"60")
+classroom5 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"70")
+classroom6 = Room.create(has_projector: true, has_whiteboard_walls: true, max_guests:"50")

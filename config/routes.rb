@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  
+
+  resources :reservations
   get '/welcome', to: 'welcome#index'
   post '/welcome', to: 'welcome#new'
   get '/details', to: 'reservations#new'
-  get '/confirm', to: 'reservations#confirm'
-  post '/confirm', to: 'reservations#create'
-  get '/done', to: 'reservations#show'
-
-
-
-  # resources :reservations do
-  #   # member route for non-restful routes
-  # end
+  # get '/confirm', to: 'reservations#confirm'
+  post '/details', to: 'reservations#create'
+  get '/done/:reservation_id', to: 'reservations#show'
 
 end

@@ -4,39 +4,39 @@
   </header>
   <section class="flex-container">
     <div class="box flex-1">
-      <%= form_for @reservation, url: {action: "confirm"}, method: :get do |f| %>
+      <%= form_for @reservation, url: {action: "create"}, method: :post do |f| %>
       <div class="details-flex-container">
         <div class="box details-flex-1">
           <%= f.label :date_and_time %>
-          <%= datetime_local_field(:reservation_time, :reservation_date) %>
+          <%= datetime_local_field(:reservation_date, :reservation_time) %>
         </div>
         <div class="box details-flex-2">
           <%= f.label :number_of_guests %>
-          <output for=fader id=guests>50</output>
-          <%= f.range_field :num_guests, :in => 0..100, :step => 1, list: "volumeslider" %>
+          <output for=fader id=guests>0</output>
+          <%= f.range_field :num_guests, :in => 0..70, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-3">
           <%= f.label :number_of_tables %>
-          <output for=fader id=tables>10</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_tables, :in => 0..20, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-4">
           <%= f.label :number_of_chairs %>
-          <output for=fader id=tables>25</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_chairs, :in => 0..50, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-5">
           <%= f.label :number_of_adapters %>
-          <output for=fader id=tables>3</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_adapters, :in => 0..5, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-6">
           <%= f.label :number_of_whiteboards %>
-          <output for=fader id=tables>1</output>
+          <output for=fader id=tables>0</output>
           <%= f.range_field :num_whiteboards, :in => 0..3, :step => 1, list: "volumeslider" %>
         </div>
         <div class="box details-flex-7">
-          <%= select(:reservation, :has_alcohol, [['Yes, I agree to not serve alcohol to guests under 21 years of age.', true], ['No, we will not be serving alcohol.', false]]) %>
+          <%= select(:reservation, :has_alcohol, [['No, we will not be serving alcohol.', false], ['Yes, I agree to only provide alcohol to guests over 21 years of age.', true]]) %>
         </div>
         <div class="box details-flex-8">
           <%= f.submit "Reserve" %>
